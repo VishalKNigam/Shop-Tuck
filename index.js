@@ -3,15 +3,15 @@ const { connection } = require("./db");
 const { userRouter } = require("./routes/user.router");
 const { productRouter } = require("./routes/product.router");
 const cors = require("cors");
-const passport = require("./Oauth");
+// const passport = require("./Oauth");
 // const { tracker } = require("./middlewares/tracker.middleware");
 require("dotenv").config();
-const session = require('express-session');
-const MongoDBStore = require('connect-mongodb-session')(session);
-const store = new MongoDBStore({
-    uri: 'mongodb://localhost:27017/db',
-    collection: 'sessions'
-});
+// const session = require('express-session');
+// const MongoDBStore = require('connect-mongodb-session')(session);
+// const store = new MongoDBStore({
+//     uri: 'mongodb://localhost:27017/db',
+//     collection: 'sessions'
+// });
 
 PORT = process.env.PORT || 4500;
 
@@ -29,15 +29,15 @@ app.get("/", (req, res) => {
     res.send("Home Page");
 });
 
-app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }), (req, res) => {
-    res.send("Google OAuth completed");
-});
+// app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }), (req, res) => {
+//     res.send("Google OAuth completed");
+// });
 
-app.get('/auth/google/callback',
-    passport.authenticate('google', { failureRedirect: '/login', session: false}),
-    function (req, res) {
-        res.redirect('/');
-    });
+// app.get('/auth/google/callback',
+//     passport.authenticate('google', { failureRedirect: '/login', session: false}),
+//     function (req, res) {
+//         res.redirect('/');
+//     });
 
 app.listen(process.env.PORT, async () => {
     try {

@@ -2,7 +2,7 @@ let tbody = document.getElementById("tablebody");
 let imageURL = "../Images/bell-icon.png";
 let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 let totalPrice = 0;
-let baseURL = `http://localhost:4000/product`;
+let baseURL = `http://localhost:4500/product`;
 
 // async function fetchAndRender() {
 //     let res = await fetch(baseURL, {

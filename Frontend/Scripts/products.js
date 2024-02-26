@@ -110,7 +110,7 @@
 
 async function FetchData() {
   try {
-    let res = await fetch("http://localhost:4000/product/");
+    let res = await fetch("http://localhost:4500/product/");
     res = await res.json();
     // FilterData(res.data);
     console.log(res)
@@ -128,7 +128,7 @@ filterSelect.addEventListener('change', async () => {
   let selectedFilter = filterSelect.value;
 
   try {
-    let response = await fetch("http://localhost:4000/product/");
+    let response = await fetch("http://localhost:4500/product/");
     let data = await response.json();
     let filteredProducts = [];
 
